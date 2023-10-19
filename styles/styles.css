@@ -76,7 +76,7 @@ nav img {
         z-index: 1;
     }
     .navbar-column{
-        display: inline;
+        display: flex;
     }
 
     nav ul{
@@ -87,5 +87,28 @@ nav img {
     nav.active {
         display: flex;
     }
+    .navbar-column a {
+        display: none;
+    }
+    .navbar-column.active a {
+        display: block;
+    }
+
+    /* Display the toggle button only on smaller screens */
+    #nav-toggle {
+        display: block;
+    }
 }
 
+
+
+
+/* On larger screens, display the navigation links and hide the toggle button */
+@media screen and (min-width: 768px) {
+    .navbar-column a {
+        display: block;
+    }
+    #nav-toggle {
+        display: none;
+    }
+}

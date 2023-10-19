@@ -1,8 +1,4 @@
-document.getElementById("nav-toggle").addEventListener("click", function() {
-    var nav = document.querySelector("nav");
-    if (nav.classList.contains("active")) {
-        nav.classList.remove("active");
-    } else {
-        nav.classList.add("active");
-    }
+document.getElementById('nav-toggle').addEventListener('click', function() {
+    const navLinks = document.querySelector('.navbar-column');
+    navLinks.classList.toggle('active');
 });
