@@ -5,15 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drake Doner Kebab</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <script src="scripts/main.js" defer></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="/scripts/script.js" defer></script>
 </head>
 <body>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About Us</a>
+    <nav class="navbar">
+        <div class="navbar column">
+        <img src="/images/logo_drake.png" alt="">
+        </div>
+        <div class="navbar-column">
+            <button id="nav-toggle" class="menu-icon">☰</button>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <a href="franchise.html">Franchising</a>
+        </div>
     </nav>
-    <div id="content"></div><button onclick="showAddKebabForm()">Add Kebab</button>
+<!--    <div id="content"></div><button onclick="showAddKebabForm()">Add Kebab</button>-->
 </body>
 </html>
     
