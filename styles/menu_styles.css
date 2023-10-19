@@ -1,0 +1,61 @@
+/* Mobile Styles (default) */
+.kebab-item {
+    border: 2px solid #333;
+    padding: 20px;
+    margin: 10px 0;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    width: 100%; /* Ensures full width on mobile */
+}
+
+.kebab-item:hover {
+    transform: translateY(-10px);
+}
+
+.kebab-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.description {
+    margin-bottom: 10px;
+}
+
+.cost {
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #ff4500;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+@media screen and (min-width: 700px) {
+    #kebab-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .kebab-item {
+        flex: 0 0 calc(50% - 20px);
+        margin: 10px;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .cost {
+        font-size: 22px;
+    }
+}

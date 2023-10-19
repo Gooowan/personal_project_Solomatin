@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drake Doner Kebab</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/menu_styles.css">
     <script src="/scripts/script.js" defer></script>
+    <script src="/scripts/kebab_fetch.js" defer></script>
 </head>
 <body>
     <nav class="navbar">
         <div class="navbar column">
-        <img src="/images/logo_drake.png" alt="">
-        <button id="nav-toggle" class="menu-icon">☰</button>
+            <img src="/images/logo_drake.png" alt="">
+            <h1 style="color: white">Drake Doner Kebab</h1>
+            <button id="nav-toggle" class="menu-icon">☰</button>
         </div>
         <div class="navbar-column">
             <a href="index.html">Home</a>
@@ -20,7 +23,7 @@
             <a href="franchise.html">Franchising</a>
         </div>
     </nav>
-<!--    <div id="content"></div><button onclick="showAddKebabForm()">Add Kebab</button>-->
+    <div id="kebab-container"></div>
 </body>
 </html>
     
