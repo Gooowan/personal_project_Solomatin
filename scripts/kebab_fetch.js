@@ -11,7 +11,7 @@ fetch('/data/kebabs.json')
 
             kebabDiv.innerHTML = `
                 <h3>${kebab.name}</h3>
-                <img src="/images/${kebab.image}" alt="${kebab.name}">
+                <img src="images/${kebab.image}" alt="${kebab.name}">
                 <p>${kebab.description}</p>
                 <p class="cost">${kebab.price}</p>
             `;
