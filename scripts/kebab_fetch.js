@@ -1,5 +1,5 @@
 // Fetch the kebab data from the provided kebabs.json file
-fetch('/data/kebabs.json')
+fetch('data/kebabs.json')
     .then(response => response.json())
     .then(data => {
         const kebabContainer = document.getElementById('kebab-container');
