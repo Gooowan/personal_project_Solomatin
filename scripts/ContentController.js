@@ -7,6 +7,7 @@ function showHomeContent() {
     if (!isContainerVisible("kebab-container")) {
         // Show home content
         document.getElementById("kebab-container").style.display = "flex";
+        document.getElementById("kebab-container").style.flexWrap = "wrap";
         // Hide other containers
         document.getElementById("faq-container").style.display = "none";
         document.getElementById("franchise-container").style.display = "none";
@@ -17,10 +18,11 @@ function showHomeContent() {
 function showFAQContent() {
     if (!isContainerVisible("faq-container")) {
         // Show FAQ content
-        document.getElementById("faq-container").style.display = "flex";
+        document.getElementById("faq-container").style.display = "block";
         // Hide other containers
         document.getElementById("kebab-container").style.display = "none";
         document.getElementById("franchise-container").style.display = "none";
+        appendFAQContainer();
     }
 }
 
@@ -44,3 +46,5 @@ document.addEventListener('click', (event) => {
         showFranchiseContent();
     }
 });
+
+showHomeContent();
