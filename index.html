@@ -8,18 +8,22 @@
     <link rel="stylesheet" href="styles/menu_styles.css">
     <script src="/scripts/nav_dropdown.js" defer></script>
     <script src="/scripts/kebab_fetch.js" defer></script>
+    <script src="/scripts/franchiseContainer.js" defer></script>
+    <script src="/scripts/ContentController.js" defer></script>
+    <script src="/scripts/RateFetch.js" defer></script>
 </head>
 <body>
     <nav class="navbar">
         <div class="navbar column">
             <img src="/images/logo_drake.png" alt="">
             <h1 style="color: white">Drake Doner Kebab</h1>
+            <div id="rate-display" style="color: #FFFFFF; margin-left: 10px">Loading...</div>
             <button id="nav-toggle" class="menu-icon">☰</button>
         </div>
         <div class="navbar-column">
-            <a href="index.html">Home</a>
-            <a href="faq.html">FAQ</a>
-            <a href="franchise.html">Franchising</a>
+            <a href="javascript:void(1);" onclick="fetchKebabContent()">Home</a>
+            <a href="javascript:void(0);" onclick="showFAQContent()">FAQ</a>
+            <a href="javascript:void(0);" onclick="appendFranchiseContainer()">Franchising</a>
         </div>
     </nav>
     <div id="kebab-container"></div>
