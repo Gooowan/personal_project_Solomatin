@@ -6,7 +6,7 @@ function isContainerVisible(containerId) {
 function showHomeContent() {
     if (!isContainerVisible("kebab-container")) {
         // Show home content
-        document.getElementById("kebab-container").style.display = "block";
+        document.getElementById("kebab-container").style.display = "flex";
         // Hide other containers
         document.getElementById("faq-container").style.display = "none";
         document.getElementById("franchise-container").style.display = "none";
@@ -17,7 +17,7 @@ function showHomeContent() {
 function showFAQContent() {
     if (!isContainerVisible("faq-container")) {
         // Show FAQ content
-        document.getElementById("faq-container").style.display = "block";
+        document.getElementById("faq-container").style.display = "flex";
         // Hide other containers
         document.getElementById("kebab-container").style.display = "none";
         document.getElementById("franchise-container").style.display = "none";
@@ -34,3 +34,13 @@ function showFranchiseContent() {
         appendFranchiseContainer();
     }
 }
+
+document.addEventListener('click', (event) => {
+    if (event.target.matches('#nav-home')) {
+        showHomeContent();
+    } else if (event.target.matches('#nav-faq')) {
+        showFAQContent();
+    } else if (event.target.matches('#nav-franchise')) {
+        showFranchiseContent();
+    }
+});
