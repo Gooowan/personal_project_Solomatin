@@ -1,4 +1,7 @@
-/* Base styles */
+*{
+    margin: 0;
+    padding: 0;
+}
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,102,0,1) 50%, rgba(252,176,69,1) 100%);
@@ -11,16 +14,23 @@ body {
 nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Keeps items vertically centered */
     background-color: black;
-    padding: 10px 30px;
+    padding: 10px 20px; /* Add some padding for better spacing */
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    list-style-type: none;
-    gap: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center; /* Center align the list items */
+    margin: 0;
+    padding: 0;
 }
 
 nav li {
     display: inline-block;
+    margin: 0 10px;
 }
 
 nav a {
@@ -37,8 +47,7 @@ nav a:hover {
 }
 
 nav img {
-    height: 40px;
-    margin-right: 20px;
+    height: 40px; /* Adjust the height as needed */
 }
 
 #dish-content {
@@ -70,18 +79,17 @@ nav img {
     line-height: 1.4;
 }
 
-/* Responsive styles */
 @media (max-width: 600px) {
-    nav ul {
+    nav {
         flex-direction: column;
         text-align: center;
     }
 
-    nav ul li {
-        margin: 10px 0;
+    nav ul {
+        flex-direction: column;
     }
 
-    #dish-content {
-        padding: 10px;
+    nav li {
+        margin: 5px 0;
     }
 }
