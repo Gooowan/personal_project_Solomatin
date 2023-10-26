@@ -16,7 +16,6 @@ fetch(url)
             console.log('Rate:', usdData.rate);
             currentRate = usdData.rate;
 
-            // Update the DOM to display the rate
             document.getElementById('rate-display').innerText = `Current Hryvna Rate: ${currentRate}`;
         } else {
             console.error('Долар США data not found');
