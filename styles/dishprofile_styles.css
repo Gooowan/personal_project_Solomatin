@@ -14,16 +14,16 @@ body {
 nav {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Keeps items vertically centered */
+    align-items: center;
     background-color: black;
-    padding: 10px 20px; /* Add some padding for better spacing */
+    padding: 10px 20px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    align-items: center; /* Center align the list items */
+    align-items: center;
     margin: 0;
     padding: 0;
 }
@@ -47,7 +47,7 @@ nav a:hover {
 }
 
 nav img {
-    height: 40px; /* Adjust the height as needed */
+    height: 40px;
 }
 
 #dish-content {
@@ -77,6 +77,15 @@ nav img {
 #dish-description {
     font-size: 1.2em;
     line-height: 1.4;
+}
+
+.edit-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 @media (max-width: 600px) {

@@ -1,6 +1,6 @@
 function appendFAQContainer() {
     document.getElementById("faq-container").innerHTML = `
-    <script src="dropdown_faq.js"></script>
+    
     <div class="faq-block">
         <h1>Frequently Asked Questions</h1>
         <div class="faq-section">
