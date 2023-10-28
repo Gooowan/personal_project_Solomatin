@@ -38,6 +38,56 @@
     border-radius: 5px;
 }
 
+#add-kebab-form {
+    border: 2px solid #333;
+    padding: 20px;
+    margin: 10px 0;
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    width: 100%;
+}
+
+#add-kebab-form:hover {
+    transform: translateY(-10px);
+}
+
+#add-kebab-form label{
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin: 15px 0;
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+}
+#add-kebab-form input,
+#add-kebab-form textarea {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin: 15px 0;
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #e43f00;
+}
+
+#add-kebab-form input[type="submit"] {
+    background-color: #ff4500;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+    margin-top: 20px;
+}
+
+#add-kebab-form input[type="submit"]:hover {
+    background-color: #e43f00;
+}
+
 @media screen and (min-width: 700px) {
     #kebab-container {
         display: flex;
@@ -57,4 +107,18 @@
     .cost {
         font-size: 22px;
     }
+}
+
+.delete-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.delete-button:hover {
+    background-color: #ff3333;
 }

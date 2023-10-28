@@ -43,4 +43,4 @@ document.addEventListener('click', (event) => {
 
 showHomeContent();
 
-// localStorage.clear();
+localStorage.clear();
