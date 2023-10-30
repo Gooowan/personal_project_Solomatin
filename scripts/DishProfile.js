@@ -20,18 +20,20 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
     document.getElementById('dish-name').addEventListener('dblclick', function() {
-        editElement(this, 'name');
+        editElement(this, dishID, 'name');
     });
 
     document.getElementById('dish-description').addEventListener('dblclick', function() {
-        editElement(this, 'description');
+        editElement(this, dishID, 'description');
     });
 
 });
 
 
 function displayDish(kebabs, dishID) {
-    const dish = kebabs.find(d => d.id === parseInt(dishID));
+    const dish = kebabs.find(d => +d.id === +dishID);
+    console.log(dishID, kebabs);
+    console.log(dish);
     if (dish) {
         document.getElementById('dish-name').textContent = dish.name;
         document.getElementById('dish-image').src = `images/${dish.image}`;

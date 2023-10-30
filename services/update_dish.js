@@ -1,36 +1,35 @@
-function editElement(element, type) {
-    const initialValue = element.textContent;
+function editElement(DOMElement, kebabID, type) {
+    const initialValue = DOMElement.textContent;
     console.log(initialValue);
     const input = document.createElement(type === 'name' ? 'input' : 'textarea');
     input.className = 'edit-input';
     input.value = initialValue;
 
     input.addEventListener('blur', function() {
-        updateKebabData(initialValue, element, type, this.value);
+        updateKebabData(kebabID, type, this.value, DOMElement);
     });
     input.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
-            updateKebabData(initialValue, element, type, this.value);
+            updateKebabData(kebabID, type, this.value, DOMElement);
         }
     });
 
-    element.textContent = '';
-    element.appendChild(input);
+    DOMElement.textContent = '';
+    DOMElement.appendChild(input);
     input.focus();
 }
 
-function updateKebabData(initialValue, element, type, newValue) {
-    const dishName = initialValue;
+function updateKebabData(kebabID, type, newValue, DOMElement) {
     let kebabsData = JSON.parse(localStorage.getItem('kebabsData'));
 
-    console.log(dishName);
-    let dish = kebabsData.find(d => d.name === dishName);
+    console.log(kebabID, kebabsData);
+    let dish = kebabsData.find(d => +d.id === +kebabID);
 
     if (dish) {
         dish[type] = newValue;
         localStorage.setItem('kebabsData', JSON.stringify(kebabsData));
-        //console.log("Updated kebabsData in localStorage");
+        console.log("Updated kebabsData in localStorage", kebabsData);
     }
 
-    element.textContent = newValue;
+    DOMElement.textContent = newValue;
 }

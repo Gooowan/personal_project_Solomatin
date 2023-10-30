@@ -1,20 +1,12 @@
-function removeDishFromUI(dishName) {
-
-    const dishElement = document.querySelector(`.dish[data-name='${dishName}']`);
-    if (dishElement) {
-        dishElement.remove();
-    }
-}
-
-function deleteKebab(dishName) {
+function deleteKebab(dishID) {
     let kebabsData = JSON.parse(localStorage.getItem('kebabsData'));
-    const dishIndex = kebabsData.findIndex(d => d.name === dishName);
+    const dishId = kebabsData.findIndex(d => +d.id === +dishID);
 
-    if (dishIndex !== -1) {
-        kebabsData.splice(dishIndex, 1);
+    if (dishId !== -1) {
+        kebabsData.splice(dishId, 1);
         localStorage.setItem('kebabsData', JSON.stringify(kebabsData));
-
-        removeDishFromUI(dishName);
+        console.log(kebabsData);
+        displayKebabs(kebabsData);
     } else {
         console.log("Dish not found for deletion");
     }
@@ -29,20 +21,22 @@ function fetchKebabContent() {
 
     let kebabsData = JSON.parse(localStorage.getItem('kebabsData'));
     if (kebabsData) {
-        displayKebabs(kebabsData, kebabContainer);
+        displayKebabs(kebabsData);
     } else {
 
         fetch('data/kebabs.json')
             .then(response => response.json())
             .then(data => {
                 localStorage.setItem('kebabsData', JSON.stringify(data));
-                displayKebabs(data, kebabContainer);
+                displayKebabs(data);
             });
     }
 }
 
-function displayKebabs(kebabs, container) {
-    container.innerHTML = `
+function displayKebabs(kebabs) {
+    const container = document.getElementById('kebab-container');
+    if (container){
+        container.innerHTML = `
         <form id="add-kebab-form">
             <label for="kebab-name">Name:</label>
             <input type="text" id="kebab-name" name="kebab-name" required><br>
@@ -71,12 +65,12 @@ function displayKebabs(kebabs, container) {
         kebabDiv.style.cursor = 'pointer';
 
         kebabDiv.innerHTML = `
-            <h3>${kebab.name}</h3>
-            <img src="images/${kebab.image}" alt="${kebab.name}">
-            <p>${kebab.description}</p>
-            <p class="cost">${kebab.price}</p>
-            <button class="delete-button" onclick="deleteKebab('${kebab.name}')">Delete Kebab</button>
-        `;
+        <h3>${kebab.name}</h3>
+        <img src="images/${kebab.image}" alt="${kebab.name}">
+        <p>${kebab.description}</p>
+        <p class="cost">${kebab.price}</p>
+        <button class="delete-button" onclick="deleteKebab(${kebab.id})">Delete Kebab</button>
+    `;
 
         container.appendChild(kebabDiv);
     });
@@ -87,18 +81,24 @@ function displayKebabs(kebabs, container) {
         event.preventDefault();
 
         let kebabsData = JSON.parse(localStorage.getItem('kebabsData')) || [];
+        console.log('kebabsData1', kebabsData);
         const newKebab = {
             id: `${kebabsData.length + 11}`,
             name: document.getElementById('kebab-name').value,
             description: document.getElementById('kebab-description').value,
             price: `$${document.getElementById('kebab-price').value}.99`,
-            image: document.getElementById('kebab-image').value || 'default.jpg'
+            image: document.getElementById('kebab-image').value || 'logo_drake.jpg'
         };
 
         kebabsData.push(newKebab);
+        console.log('kebabsData2', kebabsData);
+
         localStorage.setItem('kebabsData', JSON.stringify(kebabsData));
-        displayKebabs(kebabsData, document.getElementById('kebab-container'));
+        displayKebabs(kebabsData);
     });
+    }
+
+
 
 }
 
